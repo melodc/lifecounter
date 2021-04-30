@@ -6,131 +6,59 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var contentView: UIStackView!
+    var count : Int = 5
     
-    @IBOutlet weak var p1count: UILabel!
+    @IBAction func subtractPlayer(_ sender: UIButton) {
+        NSLog("Subtracting player")
+        if (count >= 2) {
+            if let viewWithTag = self.view.viewWithTag(100) {
+                viewWithTag.removeFromSuperview()
+            }else{
+                NSLog("Error")
+            }
+            count -= 1
+        } else {
+            NSLog("Can't have lsss than 2 players!")
+        }
+    }
     
-    @IBOutlet weak var p2count: UILabel!
+    @IBAction func addPlayer(_ sender: UIButton) {
+        if (count <= 8) {
+            addPlayerFunction(count: count)
+            count += 1
+        } else {
+            NSLog("Max number of players hit!")
+        }
+    }
     
-    @IBOutlet weak var p3count: UILabel!
-    
-    @IBOutlet weak var p4count: UILabel!
-    
-    @IBOutlet weak var loser: UILabel!
+    func addPlayerFunction(count : Int) {
+        let name = "Player " + String(count)
+        let lives = 20
+
+        let personPanel = PlayerView()
+        personPanel.data = (name, lives)
+        contentView.addArrangedSubview(personPanel)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        p1count.text = "20"
-        p2count.text = "20"
-        p3count.text = "20"
-        p4count.text = "20"
+        addPlayerFunction(count: 1)
+        addPlayerFunction(count: 2)
+        addPlayerFunction(count: 3)
+        addPlayerFunction(count: 4)
 
-    }
-
-
-    @IBAction func p1AddSub5(_ sender: UIButton) {
-        var newTotal = Int(p1count.text!)!
-        if (sender.tag == 0) {
-            newTotal -= 5
-        } else if (sender.tag == 1) {
-            newTotal += 5
-        }
-        p1count.text = String(newTotal)
-        if (newTotal <= 0) {
-            loser.text = "Player 1 loses!"
-        }
-    }
-    
-    @IBAction func p1AddSubUserInput(_ sender: UITextField) {
-        if Int(sender.text!) != nil {
-            let newTotal = Int(p1count.text!)! + Int(sender.text!)!
-            p1count.text = String(newTotal)
-            if (newTotal <= 0) {
-                loser.text = "Player 1 loses!"
-            }
-        } else {
-            print("Input can only be an integer")
-        }
-        
-    }
-    
-    
-    @IBAction func p2AddSub5(_ sender: UIButton) {
-        var newTotal = Int(p2count.text!)!
-        if (sender.tag == 0) {
-            newTotal -= 5
-        } else if (sender.tag == 1) {
-            newTotal += 5
-        }
-        p2count.text = String(newTotal)
-        if (newTotal <= 0) {
-            loser.text = "Player 2 loses!"
-        } 
-    }
-    @IBAction func p2AddSubUserInput(_ sender: UITextField) {
-        if Int(sender.text!) != nil {
-            let newTotal = Int(p2count.text!)! + Int(sender.text!)!
-            p2count.text = String(newTotal)
-            if (newTotal <= 0) {
-                loser.text = "Player 2 loses!"
-            }
-        } else {
-            print("Input can only be an integer")
-        }
-    }
-    
-    @IBAction func p3AddSub5(_ sender: UIButton) {
-        var newTotal = Int(p3count.text!)!
-        if (sender.tag == 0) {
-            newTotal -= 5
-        } else if (sender.tag == 1) {
-            newTotal += 5
-        }
-        p3count.text = String(newTotal)
-        if (newTotal <= 0) {
-            loser.text = "Player 3 loses!"
-        }
-    }
-    
-    @IBAction func p3AddSubUserInput(_ sender: UITextField) {
-        if Int(sender.text!) != nil {
-            let newTotal = Int(p3count.text!)! + Int(sender.text!)!
-            p3count.text = String(newTotal)
-            if (newTotal <= 0) {
-                loser.text = "Player 3 loses!"
-            }
-        } else {
-            print("Input can only be an integer")
-        }
-        
-    }
-    
-    @IBAction func p4AddSub5(_ sender: UIButton) {
-        var newTotal = Int(p4count.text!)!
-        if (sender.tag == 0) {
-            newTotal -= 5
-        } else if (sender.tag == 1) {
-            newTotal += 5
-        }
-        p4count.text = String(newTotal)
-        if (newTotal <= 0) {
-            loser.text = "Player 4 loses!"
-        }
-    }
-    
-    @IBAction func p4AddSubUserInput(_ sender: UITextField) {
-        if Int(sender.text!) != nil {
-            let newTotal = Int(p4count.text!)! + Int(sender.text!)!
-            p4count.text = String(newTotal)
-            if (newTotal <= 0) {
-                loser.text = "Player 4 loses!"
-            }
-        } else {
-            print("Input can only be an integer")
-        }
     }
 }
 
+
+struct ViewController_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+    }
+}
