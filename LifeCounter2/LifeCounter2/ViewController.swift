@@ -42,6 +42,7 @@ class ViewController: UIViewController {
 
         let personPanel = PlayerView()
         personPanel.data = (name, lives)
+        personPanel.tag = 100
         contentView.addArrangedSubview(personPanel)
     }
     

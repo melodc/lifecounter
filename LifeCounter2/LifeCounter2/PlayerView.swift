@@ -38,10 +38,13 @@ class PlayerView: UIView {
         let viewFromXib = Bundle.main.loadNibNamed("PlayerView", owner: self, options: nil)![0] as! UIView
         viewFromXib.frame = self.bounds
         addSubview(viewFromXib)
-    
+        viewFromXib.frame.size.width = 80 // Set your desired width here
+        viewFromXib.layoutIfNeeded()
+        viewFromXib.frame.size.height = 200
+        
         playerLabel = (viewFromXib.subviews[0].subviews[0].subviews[0] as! UILabel)
         scoreLabel = (viewFromXib.subviews[0].subviews[0].subviews[1] as! UILabel)
-        subtractFiveButton = (viewFromXib.subviews[0].subviews[1].subviews[0].subviews[0] as! UIButton)
+//        subtractFiveButton = (viewFromXib.subviews[0].subviews[1].subviews[0].subviews[0] as! UIButton)
         
     }
     
