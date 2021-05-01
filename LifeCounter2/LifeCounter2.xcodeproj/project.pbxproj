@@ -15,6 +15,7 @@
 		933E81572638C3170011F990 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 933E81552638C3170011F990 /* LaunchScreen.storyboard */; };
 		93614C29263CB60800B9E5E1 /* PersonPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93614C28263CB60800B9E5E1 /* PersonPanel.xib */; };
 		93614C30263CCD2100B9E5E1 /* PersonPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93614C2F263CCD2000B9E5E1 /* PersonPanel.swift */; };
+		93614C33263CE20A00B9E5E1 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93614C32263CE20A00B9E5E1 /* HistoryController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		933E81582638C3170011F990 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93614C28263CB60800B9E5E1 /* PersonPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonPanel.xib; sourceTree = "<group>"; };
 		93614C2F263CCD2000B9E5E1 /* PersonPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonPanel.swift; sourceTree = "<group>"; };
+		93614C32263CE20A00B9E5E1 /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				933E814A2638C3120011F990 /* AppDelegate.swift */,
 				933E814C2638C3120011F990 /* SceneDelegate.swift */,
 				933E814E2638C3120011F990 /* ViewController.swift */,
+				93614C32263CE20A00B9E5E1 /* HistoryController.swift */,
 				933E81502638C3120011F990 /* Main.storyboard */,
 				93614C2F263CCD2000B9E5E1 /* PersonPanel.swift */,
 				933E81532638C3170011F990 /* Assets.xcassets */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93614C33263CE20A00B9E5E1 /* HistoryController.swift in Sources */,
 				933E814F2638C3120011F990 /* ViewController.swift in Sources */,
 				933E814B2638C3120011F990 /* AppDelegate.swift in Sources */,
 				933E814D2638C3120011F990 /* SceneDelegate.swift in Sources */,

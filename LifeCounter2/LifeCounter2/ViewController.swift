@@ -7,9 +7,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+protocol ViewDelegate {
+    func disableAddPlayer()
+    func showLoser(player: String)
+}
+var history : [String] = []
+
+class ViewController: UIViewController, ViewDelegate {
     @IBOutlet weak var contentView: UIStackView!
 
+    @IBOutlet weak var addPlayers: UIButton!
+    
+    @IBOutlet weak var loser: UILabel!
+    
+    var count : Int = 5
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -17,11 +29,7 @@ class ViewController: UIViewController {
         addPlayerFunction(count: 2)
         addPlayerFunction(count: 3)
         addPlayerFunction(count: 4)
-
     }
-
-    var count : Int = 5
-
 
     @IBAction func addPlayer(_ sender: UIButton) {
         if (count <= 8) {
@@ -49,16 +57,34 @@ class ViewController: UIViewController {
 
 
     func addPlayerFunction(count : Int) {
-        let name = "Player " + String(count)
+        let name = String(count)
         let lives = 20
 
         let personPanel = PersonPanelView()
         personPanel.data = (name, lives)
         personPanel.tag = 100
-
+        personPanel.delegate = self
+        
         contentView.addArrangedSubview(personPanel)
         }
 
+    func disableAddPlayer() {
+        NSLog("Add player function disabled")
+        addPlayers.isEnabled = false
+        addPlayers.alpha = 0.5;
+    }
+    
+    func showLoser(player: String) {
+        loser.text = "Player \(player) LOSES!"
+        history.append("Player \(player) LOSES!")
+    }
+    
+    
+    @IBAction func viewHistory(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil);
+        let controller  = storyboard.instantiateViewController(withIdentifier: "HistoryScreen") as! HistoryController;
+        self.present(controller, animated: true, completion: nil);
+    }
     
 }
 
