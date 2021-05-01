@@ -16,11 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" alignment="top" id="555-F4-2yx">
-                                <rect key="frame" x="38" y="263" width="336" height="530"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Eek-aH-CTm">
                                 <rect key="frame" x="37" y="32" width="363" height="234"/>
                                 <subviews>
@@ -40,7 +35,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="addPlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GOm-ym-hod"/>
+                                                    <action selector="addPlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6f8-O9-rIY"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZGq-oT-AXN">
@@ -50,7 +45,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="subtractPlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g7F-wF-EmA"/>
+                                                    <action selector="subtractPlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pLS-5U-Q0G"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -59,12 +54,16 @@
                                 </subviews>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="555-F4-2yx">
+                                <rect key="frame" x="5" y="288" width="414" height="516"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="contentView" destination="555-F4-2yx" id="Tin-jO-Zew"/>
+                        <outlet property="contentView" destination="555-F4-2yx" id="9cH-uw-R9j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
